@@ -11,19 +11,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Survival
 {
-    enum State { 
+    public enum State { 
         Start,
         Menu,
         Play,
         Pause
     }
+
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         TextureLibrary m_textureLibrary;
         Menu menu;
-        State m_state = State.Start;
+        public static State m_state = State.Start;
 
         public Game1()
         {
@@ -33,8 +34,10 @@ namespace Survival
 
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
+
             menu = new Menu();
-            graphics.IsFullScreen = true;
+          //  graphics.IsFullScreen = true;
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
@@ -77,6 +80,9 @@ namespace Survival
                 case State.Menu:
                     menu.Update(gameTime);
                     break;
+                case State.Play:
+                    //play.Update(gameTime);
+                    break;
             }
 
             base.Update(gameTime);
@@ -94,6 +100,9 @@ namespace Survival
                     break;
                 case State.Menu:
                     menu.Draw(spriteBatch);
+                    break;
+                case State.Play:
+                    spriteBatch.Draw(TextureLibrary.m_texture_startScreen, new Rectangle(0, 0, 1920, 1080), Color.White);
                     break;
             }
 
