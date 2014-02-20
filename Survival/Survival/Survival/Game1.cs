@@ -24,6 +24,7 @@ namespace Survival
         SpriteBatch spriteBatch;
         TextureLibrary m_textureLibrary;
         Menu menu;
+        Play play;
         public static State m_state = State.Start;
 
         public Game1()
@@ -37,6 +38,7 @@ namespace Survival
             this.IsMouseVisible = true;
 
             menu = new Menu();
+            play = new Play();
           //  graphics.IsFullScreen = true;
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
@@ -102,7 +104,7 @@ namespace Survival
                     menu.Draw(spriteBatch);
                     break;
                 case State.Play:
-                    spriteBatch.Draw(TextureLibrary.m_texture_startScreen, new Rectangle(0, 0, 1920, 1080), Color.White);
+                    play.Draw(spriteBatch);
                     break;
             }
 
