@@ -83,7 +83,7 @@ namespace Survival
                     menu.Update(gameTime);
                     break;
                 case State.Play:
-                    //play.Update(gameTime);
+                    play.Update(gameTime);
                     break;
             }
 
