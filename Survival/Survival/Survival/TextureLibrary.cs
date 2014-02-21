@@ -18,6 +18,12 @@ namespace Survival
         //Player
         public static Texture2D m_texture_playerTexture;
 
+        //Ingame UI
+        public static Texture2D m_texture_hpmpBackground;
+        public static Texture2D m_texture_hp;
+        public static Texture2D m_texture_mp;
+        public static Texture2D m_texture_skillBackground;
+
         public TextureLibrary(ContentManager Content){
 
             m_texture_menuScreen = Content.Load<Texture2D>(@"Textures/menuScreen");
@@ -26,7 +32,16 @@ namespace Survival
             m_texture_playButtonHL = Content.Load<Texture2D>(@"Textures/playGameButtonHL");
 
             m_texture_playerTexture = Content.Load<Texture2D>(@"Textures/playerTexture");
+
+            LoadIngameUI(Content);
         }
 
+        private void LoadIngameUI(ContentManager Content)
+        {
+            m_texture_hpmpBackground = Content.Load<Texture2D>(@"Textures/UI/hpBackground");
+            m_texture_hp = Content.Load<Texture2D>(@"Textures/UI/hpTexture");
+            m_texture_mp = Content.Load<Texture2D>(@"Textures/UI/mpTexture");
+            m_texture_skillBackground = Content.Load<Texture2D>(@"Textures/UI/skillBackground");
+        }
     }
 }
