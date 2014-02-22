@@ -47,7 +47,7 @@ namespace Survival
 
         public void Init() {
 
-            m_position = new Vector2(400, 400);
+            m_position = new Vector2(0, 0);
             m_movement = new Vector2(3, 3);
 
             m_playerRectangle = new Rectangle((int)m_position.X, (int)m_position.Y, 64, 64);

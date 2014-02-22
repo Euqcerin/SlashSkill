@@ -18,6 +18,9 @@ namespace Survival
         //Player
         public static Texture2D m_texture_playerTexture;
 
+        //Monster
+        public static Texture2D m_texture_monsterTexture;
+
         //Ingame UI
         public static Texture2D m_texture_hpmpBackground;
         public static Texture2D m_texture_hp;
@@ -37,6 +40,7 @@ namespace Survival
             m_texture_background = Content.Load<Texture2D>(@"Textures/tempBackground");
 
             m_texture_playerTexture = Content.Load<Texture2D>(@"Textures/playerTexture");
+            m_texture_monsterTexture = Content.Load<Texture2D>(@"Textures/Monster/monsterTexture");
 
             LoadIngameUI(Content);
         }
