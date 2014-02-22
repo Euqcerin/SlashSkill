@@ -36,7 +36,7 @@ namespace Survival
 
             m_texture_background = Content.Load<Texture2D>(@"Textures/tempBackground");
 
-            m_texture_playerTexture = Content.Load<Texture2D>(@"Textures/Player/player_textureSheet");
+            m_texture_playerTexture = Content.Load<Texture2D>(@"Textures/playerTexture");
 
             LoadIngameUI(Content);
         }
