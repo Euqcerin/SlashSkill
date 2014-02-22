@@ -37,6 +37,9 @@ namespace Survival
 
         private List<Rectangle> m_list_skillRectList = new List<Rectangle>();
 
+        public static int m_player_center_X;
+        public static int m_player_center_Y;
+
 
         public Player() {
             Init();
@@ -49,6 +52,9 @@ namespace Survival
 
             m_playerRectangle = new Rectangle((int)m_position.X, (int)m_position.Y, 64, 64);
             m_source_playerRectangle = new Rectangle(0, 0, 128, 128);
+
+            m_player_center_X = m_playerRectangle.X - 32;
+            m_player_center_Y = m_playerRectangle.Y - 32;
 
             m_currHPUI = m_HP_UILength / m_maxHP * m_currHP;
             m_currMPUI = m_MP_UILength / m_maxMP * m_currMP;
@@ -82,15 +88,19 @@ namespace Survival
                 m_position.X += m_movement.X;
 
             m_playerRectangle = new Rectangle((int)m_position.X, (int)m_position.Y, 64, 64);
+            m_player_center_X = m_playerRectangle.X + 32;
+            m_player_center_Y = m_playerRectangle.Y + 32;
         }
 
         public void Draw(SpriteBatch sb) {
+            sb.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, Camera.transform);
             sb.Draw(TextureLibrary.m_texture_playerTexture, m_playerRectangle, m_source_playerRectangle, Color.White);
+            sb.End();
             DrawUI(sb);
         }
 
         private void DrawUI(SpriteBatch sb) {
-
+            sb.Begin();
             for (int i = 0; i < m_list_skillRectList.Count; i++)
                 sb.Draw(TextureLibrary.m_texture_skillBackground, m_list_skillRectList[i], Color.White);
 
@@ -99,6 +109,7 @@ namespace Survival
 
             sb.Draw(TextureLibrary.m_texture_hp, m_rect_hpUI, Color.White);
             sb.Draw(TextureLibrary.m_texture_mp, m_rect_mpUI, Color.White);
+            sb.End();
         }
     }
 }

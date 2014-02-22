@@ -24,12 +24,17 @@ namespace Survival
         public static Texture2D m_texture_mp;
         public static Texture2D m_texture_skillBackground;
 
+        //TempBackground
+        public static Texture2D m_texture_background;
+
         public TextureLibrary(ContentManager Content){
 
             m_texture_menuScreen = Content.Load<Texture2D>(@"Textures/menuScreen");
             m_texture_startScreen = Content.Load<Texture2D>(@"Textures/startupScreen");
             m_texture_playButton = Content.Load<Texture2D>(@"Textures/playGameButton");
             m_texture_playButtonHL = Content.Load<Texture2D>(@"Textures/playGameButtonHL");
+
+            m_texture_background = Content.Load<Texture2D>(@"Textures/tempBackground");
 
             m_texture_playerTexture = Content.Load<Texture2D>(@"Textures/playerTexture");
 

@@ -25,6 +25,7 @@ namespace Survival
         TextureLibrary m_textureLibrary;
         Menu menu;
         Play play;
+        Camera camera;
         public static State m_state = State.Start;
 
         public Game1()
@@ -39,10 +40,11 @@ namespace Survival
 
             menu = new Menu();
             play = new Play();
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
+            camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }
 
@@ -84,6 +86,7 @@ namespace Survival
                     break;
                 case State.Play:
                     play.Update(gameTime);
+                    camera.Update();
                     break;
             }
 
@@ -93,22 +96,23 @@ namespace Survival
 
         protected override void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin();
 
             switch (m_state)
             {
-                case State.Start:
+                case State.Start: 
+                    spriteBatch.Begin();
                     spriteBatch.Draw(TextureLibrary.m_texture_startScreen, new Rectangle(0, 0, 1920, 1080), Color.White);
+                    spriteBatch.End();
                     break;
                 case State.Menu:
+                    spriteBatch.Begin();
                     menu.Draw(spriteBatch);
+                    spriteBatch.End();
                     break;
                 case State.Play:
                     play.Draw(spriteBatch);
                     break;
             }
-
-            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
