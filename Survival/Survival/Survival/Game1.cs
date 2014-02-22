@@ -28,6 +28,7 @@ namespace Survival
         Camera camera;
         public static State m_state = State.Start;
 
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -72,7 +73,6 @@ namespace Survival
                 this.Exit();
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
-
 
             // TODO: Add your update logic here
 
