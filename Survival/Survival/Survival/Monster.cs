@@ -22,6 +22,13 @@ namespace Survival
         public override void Draw(SpriteBatch sb)
         {
             base.Draw(sb);
+
+            DrawUI(sb);
+        }
+
+        private void DrawUI(SpriteBatch sb) {
+            Rectangle hpRectangle = new Rectangle((int)base_position.X, (int)base_position.Y - 10, base_size, 10);
+            sb.Draw(TextureLibrary.m_texture_hp, hpRectangle, Color.White);
         }
     }
 }

@@ -52,8 +52,14 @@ namespace Survival
         public Vector2 base_center
         {
             get { return b_center_entity; }
-            set { value = b_center_entity; }
+            set { b_center_entity = value; }
 
+        }
+
+        public int base_size
+        {
+            get { return b_size_entity; }
+            set { b_size_entity = value; }
         }
     }
 }

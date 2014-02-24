@@ -18,7 +18,7 @@ namespace Survival
         private void Init() {
             
             Random rand = new Random();
-            int size, hp, posX, posY, nr;
+            int size, posX, posY, nr;
 
             nr = rand.Next(20, 60);
             for (int i = 0; i < nr; i++)
