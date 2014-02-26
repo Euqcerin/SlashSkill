@@ -9,6 +9,7 @@ namespace Survival
 {
     class TextureLibrary
     {
+
         public static Texture2D m_texture_menuScreen;
         public static Texture2D m_texture_startScreen;
 
@@ -30,6 +31,11 @@ namespace Survival
         //TempBackground
         public static Texture2D m_texture_background;
 
+        //Map
+        public static Texture2D m_texture_grassTexture;
+        public static Texture2D m_texture_waterTexture;
+        public static Texture2D m_texture_stoneTexture;
+
         public TextureLibrary(ContentManager Content){
 
             m_texture_menuScreen = Content.Load<Texture2D>(@"Textures/menuScreen");
@@ -42,7 +48,10 @@ namespace Survival
             m_texture_playerTexture = Content.Load<Texture2D>(@"Textures/playerTexture");
             m_texture_monsterTexture = Content.Load<Texture2D>(@"Textures/Monster/monsterTexture");
 
+
+
             LoadIngameUI(Content);
+            LoadGroundTexture(Content);
         }
 
         private void LoadIngameUI(ContentManager Content)
@@ -52,5 +61,13 @@ namespace Survival
             m_texture_mp = Content.Load<Texture2D>(@"Textures/UI/mpTexture");
             m_texture_skillBackground = Content.Load<Texture2D>(@"Textures/UI/skillBackground");
         }
+
+        private void LoadGroundTexture(ContentManager Content)
+        {
+            m_texture_grassTexture = Content.Load<Texture2D>(@"Textures/Ground/grassTexture");
+            m_texture_waterTexture = Content.Load<Texture2D>(@"Textures/Ground/waterTexture");
+            m_texture_stoneTexture = Content.Load<Texture2D>(@"Textures/Ground/stoneTexture");
+        }
+
     }
 }

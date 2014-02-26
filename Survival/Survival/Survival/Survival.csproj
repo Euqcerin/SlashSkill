@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="Camera.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="MapGenerator.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="MonsterManager.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="TextureLibrary.cs" />
+    <Compile Include="Tile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

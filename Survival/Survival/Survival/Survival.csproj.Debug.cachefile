@@ -8,5 +8,8 @@ Content\Textures\UI\hpTexture.xnb
 Content\Textures\UI\mpTexture.xnb
 Content\Textures\UI\skillBackground.xnb
 Content\Textures\tempBackground.xnb
+Content\Textures\Ground\grassTexture.xnb
+Content\Textures\Ground\stoneTexture.xnb
+Content\Textures\Ground\waterTexture.xnb
 Content\Textures\Player\player_textureSheet.xnb
 Content\Textures\Monster\monsterTexture.xnb
